@@ -1,4 +1,4 @@
-# Proyecto-Analisis numerico
+# Proyecto-Análisis numérico
 
 Intengrantes:
 * Myllee Sarleth Mosquera Rivas
