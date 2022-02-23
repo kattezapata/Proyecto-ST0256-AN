@@ -1,1 +1,7 @@
-# Proyecto-An-lisis-n-merico
+# Proyecto-Analisis numerico
+
+Intengrantes:
+* 
+*
+*
+*
