@@ -5,7 +5,14 @@ from cmath import exp
 import sys
 import tkinter as tk
 from tkinter import *
+from tkinter import ttk
+
 from ecuaciones import busquedas
+
+
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import numpy as np
 
 
 def hacer_click():
@@ -20,12 +27,23 @@ def hacer_click():
  # f = lambda x : np.sin(x)
   _valor =  busquedas.busquedas(_f,_x, _dx, _max)
   etiqueta.config(text=_valor)
+  
+
+  x = np.arange(1, 100)
+  y = x 
+  plt.title("Graphic")
+  plt.xlabel("x axis caption")
+  plt.ylabel("y axis caption")
+  plt.plot(x, y)
+  plt.show()
+
  except ValueError:
   etiqueta.config(text="Resultado")
 
 
 app = Tk()
-app.config(width=600, height=300)
+app.config(width=900, height=600)
+#ventana.geometry('642x498')
 app.title("Método busquedas incrementales")
 
 #Ventana Principal
@@ -67,5 +85,6 @@ entrada_texto3.grid(column=2, row=3)
 valor4 = ""
 entrada_texto4 = Entry(vp, width=10, textvariable=valor4)
 entrada_texto4.grid(column=2, row=4)
+
 
 app.mainloop()
