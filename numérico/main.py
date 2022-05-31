@@ -3,7 +3,7 @@
 import sys
 import tkinter as tk
 from tkinter import *
-from metodos import busquedas
+from ecuaciones import busquedas
 
 
 def hacer_click():
