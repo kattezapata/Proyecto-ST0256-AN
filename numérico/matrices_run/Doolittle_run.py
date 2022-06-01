@@ -1,12 +1,11 @@
 from ast import Yield
 from cmath import exp
-from random import gauss
 import sys
 import tkinter as tk
 from tkinter import *
 from tkinter import ttk
 import tkinter.messagebox 
-import gauss_sencilla
+import Doolittle
 
 
 import matplotlib.pyplot as plt
@@ -41,22 +40,36 @@ def abrir_ventana2():
   try:
     M = [[float(values[i][j].get()) for j in range(N)] for i in range(N)]
     global M_factorizada 
-    M_factorizada =  gauss_sencilla.gaussiana_sencilla(np.array(M))
-    etiqueta.config(text="Eliminación realizada exitosamente")
-    bot_L= Button(matriz, text="Ver matriz resultante", command=abrir_ventana_final)
+    M_factorizada =  Doolittle.Doolittle(np.array(M))
+    etiqueta.config(text="Factorización realizada")
+    bot_L= Button(matriz, text="Ver Matriz L", command=abrir_ventanaL)
     bot_L.grid(column=N, row=N-1)
+    bot_U= Button(matriz, text="Ver Matriz U", command=abrir_ventanaU)
+    bot_U.grid(column=N, row=N)
 
   except ValueError:
     tkinter.messagebox.showerror(title="Error", message="Por favor ingresa correctamente los valores")
-    
-def abrir_ventana_final():
+
+def abrir_ventanaL():
   try:
     matrizL = Toplevel()
     for i in range(N):
           for j in range(N):
                 texto = Entry(matrizL, width=10)
                 texto.grid(padx=N, pady=N, row=i, column=j)
-                texto.insert(0, '{}'.format(M_factorizada[i][j]))
+                texto.insert(0, '{}'.format(M_factorizada[1][i][j]))
+
+  except ValueError:
+    tkinter.messagebox.showerror(title="Error", message="Por favor ingresa correctamente los valores")
+
+def abrir_ventanaU():
+  try:
+    matrizL = Toplevel()
+    for i in range(N):
+          for j in range(N):
+                texto = Entry(matrizL, width=10)
+                texto.grid(padx=N, pady=N, row=i, column=j)
+                texto.insert(0, '{}'.format(M_factorizada[3][i][j]))
 
   except ValueError:
     tkinter.messagebox.showerror(title="Error", message="Por favor ingresa correctamente los valores")
@@ -64,7 +77,7 @@ def abrir_ventana_final():
 app = Tk()
 app.config(width=900, height=600)
 #ventana.geometry('642x498')1
-app.title("Eliminación Gaussiana")
+app.title("Método factorización LU")
 
 #Ventana Principal
 vp = Frame(app)
