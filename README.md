@@ -1,13 +1,13 @@
-# Proyecto-Análisis numérico
+# Project-Numerical Analysis
 
-Integrantes:
+Members:
 * Myllee Sarleth Mosquera Rivas
 * Santiago Parra Mejía
 * Mariana Quintero Montoya
 * Laura Katterine Zapata Rendón
 
-Profesor: Alejandro Arenas Vasco
+Teacher: Alejandro Arenas Vasco
 
-## Temática proyecto
-El proyecto consiste en desarrollar una página web con todos los métodos y procedimientos vistos en clase para dar soluciones a ecuaciones y sis
-temas de ecuaciones.
+## Project theme
+The project consists of developing a web page with all the methods and procedures seen in class to give solutions to equations and equation systems.
+of equations.
